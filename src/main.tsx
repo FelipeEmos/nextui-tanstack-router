@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import { NextUIProvider } from '@nextui-org/react'
+import { RouterProvider } from '@tanstack/react-router'
+import { router } from './navigation/router'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <NextUIProvider>
-      <App />
+    <NextUIProvider navigate={(value) => console.log(value)}>
+      <RouterProvider router={router} />
     </NextUIProvider>
   </React.StrictMode>,
 )

@@ -1,4 +1,4 @@
-import { RootRoute, Route, Router } from "@tanstack/react-router";
+import { RootRoute, Route, Router, useRouter } from "@tanstack/react-router";
 import { BlueTab, GreenTab, IndexTab, YellowTab } from "../screens/tabs";
 import { RootScreen } from "../screens/root";
 
@@ -38,6 +38,15 @@ const routeTree = rootRoute.addChildren([
 ])
 
 export const router = new Router({ routeTree })
+
+export function useHref() {
+  const { buildLocation } = useRouter();
+  const hrefBuilder = (
+    ...args: Parameters<(typeof router)["buildLocation"]>
+  ) => buildLocation(...args).href;
+
+  return hrefBuilder;
+}
 
 declare module '@tanstack/react-router' {
   interface Register {

@@ -32,7 +32,7 @@ function TabsComponent() {
     ? matches[tabsMatchLevel].pathname
     : undefined;
 
-  return <Tabs variant="underlined" selectedKey={selectedKey}>
+  return <Tabs variant="underlined" selectedKey={selectedKey} size="lg">
     {
       tabItems.map(({ href, title }) => (
         <Tab

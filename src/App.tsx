@@ -1,7 +1,9 @@
+import { Button } from "@nextui-org/react"
+
 function App() {
   return (
-    <div className="bg-green-400">
-      <h1>Hello World</h1>
+    <div>
+      <Button>Press Me</Button>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { Button, Link, Tab, Tabs } from "@nextui-org/react";
 import { Outlet, useMatches } from "@tanstack/react-router";
 import { useCallback, useMemo, useState } from "react";
-import { useHrefBuilder } from "../navigation/router";
+import { useHrefBuilder } from "../navigation/useHrefBuilder";
 
 function TabsComponent() {
   const hrefBuilder = useHrefBuilder();
